@@ -1,21 +1,21 @@
 package Clases;
 import java.time.LocalDate;
 
-public class clases {
+public class Pagina {
     private static int nextId = 1;
     private int id;
     private String Url; 
     private String Titulo;
     private LocalDate Fecha;
 
-    public clases(String url, String titulo) {
+    public Pagina(String url, String titulo) {
         id = nextId++;
         Url = url;
         Titulo = titulo;
         Fecha = LocalDate.now();
     }
 
-    public clases(){
+    public Pagina(){
     }
 
     public static int getNextId() {
@@ -23,7 +23,7 @@ public class clases {
     }
 
     public static void setNextId(int nextId) {
-        clases.nextId = nextId;
+        Pagina.nextId = nextId;
     }
 
     public int getId() {
