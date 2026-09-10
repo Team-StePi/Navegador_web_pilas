@@ -1,4 +1,5 @@
-package src;
+
+import Clases.Pagina;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -6,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Stack<Pagina> PaginasWeb = new Stack<>();
+        Metodos m = new Metodos();
         boolean GoOn = true;
         while (GoOn) {
             try {
@@ -25,13 +27,13 @@ public class Main {
                         GoOn = false;
                         break;
                     case 1:
-                        NuevaPagina(PaginasWeb, sc);
+                        m.NuevaPagina(PaginasWeb, sc);
                         break;
                     case 2:
-                        Retroceder(PaginasWeb);
+                        m.Retroceder(PaginasWeb);
                         break;
                     case 3:
-                        VerHistorial(PaginasWeb);
+                        m.VerHistorial(PaginasWeb);
                         break;
                     default:
                         System.out.println("Opción inválida. Por favor, ingrese un número del 1 al 3.");
