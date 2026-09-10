@@ -1,3 +1,4 @@
+package src;
 
 import Clases.Pagina;
 import java.util.Scanner;
@@ -14,4 +15,15 @@ public class Metodos {
         System.out.println("Página ingresada correctamente.");
         return pila;
     }
+  
+    public void VerHistorial(Stack<Pagina> Pgs){
+        Stack<Pagina> PilaAux = new Stack<>;
+        for (int i = 0; i < Pgs.size(); i++) {
+            System.out.println(Pgs.peek());
+            PilaAux.push(Pgs.peek());
+            Pgs.pop();
+        }
+    }  
 }
+
+
