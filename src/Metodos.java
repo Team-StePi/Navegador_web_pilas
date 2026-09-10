@@ -16,6 +16,16 @@ public class Metodos {
         return pila;
     }
   
+    public Stack<Pagina> Retroceder(Stack<Pagina> pila){
+        Stack<Pagina> pilas_anterior = new Stack<>();
+        while(!pila.isEmpty()){
+            Pagina o = pila.pop();
+            pilas_anterior.push(o);
+            System.out.println("Pagina actual: "+pila.peek());
+        }
+        return pilas_anterior;
+    }
+  
     public void VerHistorial(Stack<Pagina> Pgs){
         Stack<Pagina> PilaAux = new Stack<>;
         for (int i = 0; i < Pgs.size(); i++) {
