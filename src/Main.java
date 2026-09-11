@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Stack<Pagina> PaginasWeb = new Stack<>();
+        Stack<Pagina> HistorialPW = new Stack<>();
         Metodos m = new Metodos();
         boolean GoOn = true;
         while (GoOn) {
@@ -31,13 +32,13 @@ public class Main {
                         GoOn = false;
                         break;
                     case 1:
-                        m.NuevaPagina(PaginasWeb, sc);
+                        m.NuevaPagina(PaginasWeb, HistorialPW, sc);
                         break;
                     case 2:
                         m.Retroceder(PaginasWeb);
                         break;
                     case 3:
-                        m.VerHistorial(PaginasWeb);
+                        m.VerHistorial(HistorialPW);
                         break;
                     default:
                         System.out.println("Opción inválida. Por favor, ingrese un número del 1 al 3.");

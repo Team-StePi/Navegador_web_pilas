@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class Metodos {
-    public Stack<Pagina> NuevaPagina(Stack<Pagina> pila, Scanner sc){
+    public Stack<Pagina> NuevaPagina(Stack<Pagina> pila, Stack<Pagina> historial, Scanner sc){
         System.out.println("Ingrese la URL de la página web: ");
         String url = sc.nextLine();
         System.out.println("Ingrese el título de la página web: ");
@@ -13,7 +13,12 @@ public class Metodos {
         Pagina pagina = new Pagina(url, titulo);
         pila.push(pagina);
         System.out.println("Página ingresada correctamente.");
+        GuardarEnHistorial(historial, pagina);
         return pila;
+    }
+
+    public void GuardarEnHistorial(Stack<Pagina> historial, Pagina pagina){
+        historial.push(pagina);
     }
   
     public Stack<Pagina> Retroceder(Stack<Pagina> pila){
@@ -28,11 +33,11 @@ public class Metodos {
   
     public void VerHistorial(Stack<Pagina> Pgs){
         Stack<Pagina> PilaAux = new Stack<>();
-        for (int i = 0; i < Pgs.size(); i++) {
-            System.out.println(Pgs.peek());
-            PilaAux.push(Pgs.peek());
-            Pgs.pop();
-        }
+        System.out.println("==========================================================\n");
+        System.out.println("Historial de navegación:");
+            for (Pagina p : Pgs){
+                System.out.println(p.getTitulo() + " - " + p.getUrl());
+            }
     }
 
     public void VerPaginaActual(Stack<Pagina> Pgs){
