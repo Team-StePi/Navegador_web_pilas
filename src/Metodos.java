@@ -1,6 +1,6 @@
 package src;
 
-import Clases.Pagina;
+import src.Clases.*;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -27,13 +27,18 @@ public class Metodos {
     }
   
     public void VerHistorial(Stack<Pagina> Pgs){
-        Stack<Pagina> PilaAux = new Stack<>;
+        Stack<Pagina> PilaAux = new Stack<>();
         for (int i = 0; i < Pgs.size(); i++) {
             System.out.println(Pgs.peek());
             PilaAux.push(Pgs.peek());
             Pgs.pop();
         }
-    }  
+    }
+
+    public void VerPaginaActual(Stack<Pagina> Pgs){
+        String paginaActual = Pgs.peek().getTitulo();
+        System.out.println("Pagina actual: " + paginaActual);
+    }
 }
 
 
