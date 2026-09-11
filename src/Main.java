@@ -1,5 +1,6 @@
+package src;
 
-import Clases.Pagina;
+import src.Clases.*;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -19,6 +20,9 @@ public class Main {
                 System.out.println("2. Retroceder a la página anterior");
                 System.out.println("3. Ver historial de navegación");
                 System.out.println("Presione 0 para salir.");
+                if (!PaginasWeb.isEmpty()) {
+                    m.VerPaginaActual(PaginasWeb);
+                }
                 int opt = sc.nextInt();
                 sc.nextLine(); // Clear the buffer
                 switch (opt) {
