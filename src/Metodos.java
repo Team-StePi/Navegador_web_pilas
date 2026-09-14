@@ -21,14 +21,10 @@ public class Metodos {
         historial.push(pagina);
     }
   
-    public Stack<Pagina> Retroceder(Stack<Pagina> pila){
-        Stack<Pagina> pilas_anterior = new Stack<>();
-        while(!pila.isEmpty()){
+    public void Retroceder(Stack<Pagina> pila){
+        if(!pila.isEmpty()){
             Pagina o = pila.pop();
-            pilas_anterior.push(o);
-            System.out.println("Pagina actual: "+pila.peek());
         }
-        return pilas_anterior;
     }
   
     public void VerHistorial(Stack<Pagina> Pgs){
@@ -36,13 +32,15 @@ public class Metodos {
         System.out.println("==========================================================\n");
         System.out.println("Historial de navegación:");
             for (Pagina p : Pgs){
-                System.out.println(p.getTitulo() + " - " + p.getUrl());
+                System.out.println(p.getTitulo() + " - " + p.getUrl() + " - " + p.getFecha());
             }
     }
 
     public void VerPaginaActual(Stack<Pagina> Pgs){
         String paginaActual = Pgs.peek().getTitulo();
-        System.out.println("Pagina actual: " + paginaActual);
+        System.out.println("====================================================");
+        System.out.println("          Pagina actual: " + paginaActual            );
+        System.out.println("====================================================");
     }
 }
 
