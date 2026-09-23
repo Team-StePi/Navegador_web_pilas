@@ -17,14 +17,16 @@ public class Metodos {
         return pila;
     }
 
-    public void GuardarEnHistorial(Stack<Pagina> historial, Pagina pagina){
+    public Stack<Pagina> GuardarEnHistorial(Stack<Pagina> historial, Pagina pagina){
         historial.push(pagina);
+        return historial;
     }
   
-    public void Retroceder(Stack<Pagina> pila){
+    public Stack<Pagina> Retroceder(Stack<Pagina> pila){
         if(!pila.isEmpty()){
             Pagina o = pila.pop();
         }
+        return pila;
     }
   
     public void VerHistorial(Stack<Pagina> Pgs){
